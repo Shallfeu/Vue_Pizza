@@ -15,12 +15,13 @@
           @click="onSelectType(type)"
           v-for="(type, index) in types"
           :key="type"
-          class="hover:cursor-pointer duration-500 border-2 border-gray-700 text-center text-base font-medium rounded-md px-4 w-full"
+          class="duration-500 border-2 border-gray-700 text-center text-base font-medium rounded-md px-4 w-full"
           :class="{
-            'border border-transparent hover:border-white': index === pizza.types[index],
+            'border border-transparent hover:border-white hover:cursor-pointer':
+              pizza.types.includes(index),
             'bg-white': choosen.type === type,
           }"
-          :disabled="index !== pizza.types[index]"
+          :disabled="!pizza.types.includes(index)"
           type="button"
         >
           {{ type }}
@@ -30,14 +31,15 @@
       <div class="grid grid-cols-3 gap-2">
         <button
           @click="onSelectSize(size)"
-          v-for="(size, index) in sizes"
+          v-for="size in sizes"
           :key="size"
-          class="hover:cursor-pointer duration-500 border-2 border-gray-700 text-center text-base font-medium rounded-md"
+          class="duration-500 border-2 border-gray-700 text-center text-base font-medium rounded-md"
           :class="{
-            'border border-transparent hover:border-white': size === pizza.sizes[index],
+            'border border-transparent hover:border-white hover:cursor-pointer':
+              pizza.sizes.includes(size),
             'bg-white': choosen.size === size,
           }"
-          :disabled="size !== pizza.sizes[index]"
+          :disabled="!pizza.sizes.includes(size)"
           type="button"
         >
           {{ size }} sm
