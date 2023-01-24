@@ -9,25 +9,14 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
 // Components
 import PizzaCard from '@/components/PizzaCard';
 
 export default {
-  data() {
-    return {};
+  props: {
+    pizzas: { type: Array, required: true },
   },
 
   components: { PizzaCard },
-
-  methods: {},
-
-  computed: {
-    ...mapState({
-      pizzas: (state) => state.pizza.items,
-    }),
-  },
-
-  mounted() {},
 };
 </script>
