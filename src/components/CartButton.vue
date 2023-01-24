@@ -1,5 +1,6 @@
 <template>
   <button
+    @click="$router.push('/cart')"
     type="button"
     class="bg-[#FE5F1E] text-white flex py-2 px-6 items-center font-semibold rounded-3xl"
   >

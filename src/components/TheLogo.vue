@@ -1,5 +1,5 @@
 <template>
-  <div class="flex w-full">
+  <div @click="$router.push('/')" class="flex w-full cursor-pointer">
     <img src="images/pizza-logo.svg" alt="pizza-logo" />
     <div class="ml-3">
       <h1 class="font-bold text-lg">VUE PIZZA</h1>

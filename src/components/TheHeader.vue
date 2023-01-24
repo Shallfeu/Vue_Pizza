@@ -1,7 +1,7 @@
 <template>
   <header class="flex justify-between py-4 px-8 shadow-md">
     <the-logo />
-    <cart-button :totalCost="21" :quantity="0" />
+    <cart-button v-if="this.$route.path === '/'" :totalCost="21" :quantity="0" />
   </header>
 </template>
 
